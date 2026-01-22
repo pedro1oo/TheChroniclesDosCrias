@@ -7,9 +7,23 @@ import { Card3D } from "@/components/game/Card";
 import { Filter, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Dados das Cartas (Lendas + Bronzes)
+import PedroImg from "../../images/Pedro.png";
+import GamerHardImg from "../../images/GamerHard.png";
+import PHImg from "../../images/PH.png";
+import VictorImg from "../../images/Victor.png";
+import IzumiImg from "../../images/Izumi.png";
+import SentinelaImg from "../../images/Sentinela de ferro.png";
+import RastreadorImg from "../../images/Rastreador do Pico.png";
+import CadaverImg from "../../images/Cadaver recrutado.png";
+import LadraoImg from "../../images/Ladrão de taverna.png";
+import AberracaoImg from "../../images/Aberração menor.png";
+
+import NevoaImg from "../../images/Nevoa da loucura.png";
+import SeppukuImg from "../../images/seppuku tático.png";
+import LenteImg from "../../images/lente de sobrecarga.png";
+import BarricadaImg from "../../images/barricada improvisada.png";
+
 const allCards = [
-  // Lendas (Ouro)
   {
     id: "pedro",
     name: "Pedro, O Olho",
@@ -17,6 +31,7 @@ const allCards = [
     provision: 13,
     rarity: "gold" as const,
     type: "unit" as const,
+    image: PedroImg.src,
     description: "Deploy: Remova todos os status do inimigo e aplique 'Marcado para Morrer'.",
     lore: "Pedro não erra. Se ele te viu, você já está morto; o tempo é que ainda não percebeu."
   },
@@ -27,6 +42,7 @@ const allCards = [
     provision: 12,
     rarity: "gold" as const,
     type: "unit" as const,
+    image: GamerHardImg.src,
     description: "Deploy: Revele 2 cartas da mão do oponente. Roube uma e troque por uma sua.",
     lore: "Ele vencia reis e dragões nas cartas, até ser banido por ganhar demais."
   },
@@ -37,6 +53,7 @@ const allCards = [
     provision: 14,
     rarity: "gold" as const,
     type: "unit" as const,
+    image: PHImg.src,
     description: "Fim do Turno: Se houver alguém na mesma fileira, causa 2 de dano a todos e 1 a si mesmo.",
     lore: "A paranoia derreteu sua mente. Naquele campo maldito, tudo que respira é inimigo."
   },
@@ -47,6 +64,7 @@ const allCards = [
     provision: 13,
     rarity: "gold" as const,
     type: "unit" as const,
+    image: VictorImg.src,
     description: "Deploy: Conceda Escudo a TODAS as unidades na fileira do seu Aliado. Ordem: Se aliado perder escudo, ganhe +2 Poder.",
     lore: "Ele carregou a porta da prisão nas costas para manter o mal preso... ou o mundo fora."
   },
@@ -57,11 +75,11 @@ const allCards = [
     provision: 11,
     rarity: "gold" as const,
     type: "unit" as const,
+    image: IzumiImg.src,
     description: "Deploy: Cause 3 de dano. Se matar, move-se e reseta. Passiva: Imune a feitiços se sozinha.",
     lore: "Sua espada vibra numa frequência que corta o próprio ar."
   },
 
-  // Soldados de Bronze
   {
     id: "sentinela",
     name: "Sentinela de Ferro",
@@ -69,6 +87,7 @@ const allCards = [
     provision: 5,
     rarity: "bronze" as const,
     type: "unit" as const,
+    image: SentinelaImg.src,
     description: "Deploy: Armadura +2 a aliado. Vínculo: Conceda Escudo em vez de Armadura.",
     lore: "Eles viram o que Victor fez na prisão. Agora, usam pedaços daquela mesma porta como escudos."
   },
@@ -79,6 +98,7 @@ const allCards = [
     provision: 5,
     rarity: "bronze" as const,
     type: "unit" as const,
+    image: RastreadorImg.src,
     description: "Deploy: 2 dano. Combo: Se aliado jogou carta, 3 dano e Sangramento.",
     lore: "Treinados para identificar os sinais de Pedro. Quando o Olho brilha, eles disparam."
   },
@@ -89,6 +109,7 @@ const allCards = [
     provision: 4,
     rarity: "bronze" as const,
     type: "unit" as const,
+    image: CadaverImg.src,
     description: "Desejo de Morte (Deathwish): Fortaleça uma unidade aleatória na mão do Aliado em +2.",
     lore: "Os soldados favoritos de Izumi. Perfeitos para serem usados e descartados repetidamente."
   },
@@ -99,6 +120,7 @@ const allCards = [
     provision: 6,
     rarity: "bronze" as const,
     type: "unit" as const,
+    image: LadraoImg.src,
     description: "Deploy: Compre 1, Coloque 1 no fundo. Passiva: +3 Poder se tiver mais cartas que o oponente.",
     lore: "Amigos de GamerHard. Uma piscada significa 'fujam', duas piscadas significa 'trapaceiem'."
   },
@@ -109,11 +131,11 @@ const allCards = [
     provision: 6,
     rarity: "bronze" as const,
     type: "unit" as const,
+    image: AberracaoImg.src,
     description: "Berserk: Sempre que receber dano e sobreviver, fortaleça-se em +1.",
     lore: "As coisas que vivem na névoa com PH não são mais humanas. Ficar perto delas é suicídio."
   },
 
-  // Feitiços e Táticas
   {
     id: "nevoa",
     name: "Névoa da Loucura",
@@ -121,6 +143,7 @@ const allCards = [
     provision: 7,
     rarity: "silver" as const,
     type: "spell" as const,
+    image: NevoaImg.src,
     description: "Névoa: Início do turno oponente, 2 dano na mais forte e 1 na mais fraca da fileira (3 turnos).",
     lore: "A mesma névoa que consumiu a mente de PH. Sussurra os nomes daqueles que você deixou para trás."
   },
@@ -131,6 +154,7 @@ const allCards = [
     provision: 5,
     rarity: "bronze" as const,
     type: "spell" as const,
+    image: SeppukuImg.src,
     description: "Destrua uma unidade Aliada. Cause 6 de dano a uma unidade Inimiga.",
     lore: "Izumi não tolera fraqueza. A morte honrosa fortalece o espírito da tropa."
   },
@@ -141,6 +165,7 @@ const allCards = [
     provision: 5,
     rarity: "bronze" as const,
     type: "spell" as const,
+    image: LenteImg.src,
     description: "Remova Escudo e cause 4 dano. Golpe Mortal: Crie cópia base dela no cemitério inimigo.",
     lore: "Pedro sobrecarrega o cristal de seu olho, disparando um feixe que atravessa escudos mágicos como papel."
   },
@@ -151,6 +176,7 @@ const allCards = [
     provision: 6,
     rarity: "silver" as const,
     type: "spell" as const,
+    image: BarricadaImg.src,
     description: "Cura total em aliado, conceda 2 Armadura e Defensor.",
     lore: "Victor ensinou que qualquer coisa pode ser uma defesa. Mesas, pedras, corpos..."
   }

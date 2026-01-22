@@ -1,10 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card3D } from "@/components/game/Card";
 import { Scroll, Users, Sword, Shield, Skull, BookOpen, Download } from "lucide-react";
 import { motion } from "framer-motion";
+
+import PedroImg from "../images/Pedro.png";
+import GamerHardImg from "../images/GamerHard.png";
+import PHImg from "../images/PH.png";
+import VictorImg from "../images/Victor.png";
+import IzumiImg from "../images/Izumi.png";
 
 export default function Home() {
   return (
@@ -161,6 +168,7 @@ export default function Home() {
               provision={13} 
               rarity="gold" 
               type="unit"
+              image={PedroImg.src}
               description="Deploy: Remova todos os status do inimigo e aplique 'Marcado para Morrer'."
               lore="Pedro não erra. Se ele te viu, você já está morto; o tempo é que ainda não percebeu."
             />
@@ -170,6 +178,7 @@ export default function Home() {
               provision={12} 
               rarity="gold" 
               type="unit"
+              image={GamerHardImg.src}
               description="Deploy: Revele 2 cartas da mão do oponente. Roube uma e troque por uma sua."
               lore="Ele vencia reis e dragões nas cartas, até ser banido por ganhar demais."
             />
@@ -179,6 +188,7 @@ export default function Home() {
               provision={14} 
               rarity="gold" 
               type="unit"
+              image={PHImg.src}
               description="Fim do Turno: Se houver alguém na mesma fileira, causa 2 de dano a todos e 1 a si mesmo."
               lore="A paranoia derreteu sua mente. Naquele campo maldito, tudo que respira é inimigo."
             />
@@ -216,12 +226,20 @@ export default function Home() {
              </div>
              
              {/* Character List / Visual */}
-             <div className="grid grid-cols-2 gap-4">
-               {["Pedro", "Izumi", "GamerHard", "PH", "Victor"].map((name) => (
-                 <Link href="/lendas" key={name} legacyBehavior>
-                    <div className="glass-panel p-4 rounded text-center hover:bg-white/5 transition-colors cursor-pointer group">
-                        <div className="w-12 h-12 mx-auto bg-stone-700 rounded-full mb-2 border border-gold/50 group-hover:border-gold transition-colors"></div>
-                        <span className="font-display text-white tracking-widest group-hover:text-gold transition-colors">{name}</span>
+             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+               {[
+                 { name: "Pedro", img: PedroImg },
+                 { name: "Izumi", img: IzumiImg },
+                 { name: "GamerHard", img: GamerHardImg },
+                 { name: "PH", img: PHImg },
+                 { name: "Victor", img: VictorImg }
+               ].map((char) => (
+                 <Link href="/lendas" key={char.name} legacyBehavior>
+                    <div className="glass-panel p-4 rounded-xl text-center hover:bg-white/5 transition-colors cursor-pointer group flex flex-col items-center">
+                        <div className="w-16 h-16 mx-auto rounded-full mb-3 border-2 border-gold/20 group-hover:border-gold group-hover:scale-110 transition-all duration-300 overflow-hidden relative shadow-lg">
+                            <Image src={char.img} alt={char.name} fill className="object-cover" />
+                        </div>
+                        <span className="font-display text-sm text-stone-300 tracking-widest group-hover:text-white transition-colors">{char.name}</span>
                     </div>
                  </Link>
                ))}

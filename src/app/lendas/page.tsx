@@ -3,8 +3,15 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import Image from "next/image";
 import { Sword, Shield, Eye, Ghost, Lock, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+import PedroImg from "../../images/Pedro.png";
+import GamerHardImg from "../../images/GamerHard.png";
+import PHImg from "../../images/PH.png";
+import VictorImg from "../../images/Victor.png";
+import IzumiImg from "../../images/Izumi.png";
 
 const legends = [
   {
@@ -15,6 +22,7 @@ const legends = [
     provision: 13,
     color: "from-gold to-yellow-900",
     icon: Eye,
+    image: PedroImg,
     tags: ["Humano", "Caçador", "Aprimorado"],
     ability: {
       name: "Protocolo de Abate",
@@ -36,6 +44,7 @@ const legends = [
     provision: 12,
     color: "from-neon-purple to-purple-900",
     icon: Ghost,
+    image: GamerHardImg,
     tags: ["Humano", "Bandido", "Soldado (Ex)"],
     ability: {
         name: "Mão Trocada (Sleight of Hand)",
@@ -57,6 +66,7 @@ const legends = [
     provision: 14,
     color: "from-red-900 to-black",
     icon: Sword,
+    image: PHImg,
     tags: ["Monstro", "Amaldiçoado"],
     ability: {
         name: "Paranoia Nebulosa",
@@ -78,6 +88,7 @@ const legends = [
     provision: 13,
     color: "from-stone-500 to-stone-800",
     icon: Shield,
+    image: VictorImg,
     tags: ["Humano", "Guardião", "Tanque"],
     ability: {
         name: "A Última Barreira",
@@ -99,6 +110,7 @@ const legends = [
     provision: 11,
     color: "from-tech-cyan to-blue-900",
     icon: Zap,
+    image: IzumiImg,
     tags: ["Humano", "Ninja", "Cibernético"],
     ability: {
         name: "Flash Step",
@@ -153,8 +165,8 @@ export default function LegendsPage() {
                             : "bg-stone/20 border-white/5 hover:bg-stone/40 hover:pl-6"
                         }`}
                     >
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-br ${legend.color} text-white shadow-lg`}>
-                            <legend.icon size={20} />
+                        <div className={`w-12 h-12 rounded-full border-2 border-white/10 overflow-hidden relative shrink-0 shadow-lg`}>
+                            <Image src={legend.image} alt={legend.name} fill className="object-cover" />
                         </div>
                         <div>
                             <span className={`block font-display tracking-wide ${selectedLegend.id === legend.id ? "text-white" : "text-stone-400 group-hover:text-white"}`}>
@@ -180,14 +192,19 @@ export default function LegendsPage() {
                 >
                     {/* Character Card Header */}
                     <div className="flex flex-col md:flex-row justify-between items-start gap-6 border-b border-white/10 pb-6 mb-6">
-                        <div>
-                            <h2 className="font-serif text-4xl md:text-5xl text-white mb-2">{selectedLegend.name}</h2>
-                            <div className="flex gap-2 text-sm">
-                                {selectedLegend.tags.map((tag) => (
-                                    <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-stone-400 border border-white/10">
-                                        {tag}
-                                    </span>
-                                ))}
+                        <div className="flex gap-6 items-center flex-1">
+                            <div className="relative w-28 h-28 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl shrink-0 hidden md:block">
+                                <Image src={selectedLegend.image} alt={selectedLegend.name} fill className="object-cover" priority />
+                            </div>
+                            <div>
+                                <h2 className="font-serif text-3xl md:text-5xl text-white mb-2 leading-tight">{selectedLegend.name}</h2>
+                                <div className="flex flex-wrap gap-2 text-sm">
+                                    {selectedLegend.tags.map((tag) => (
+                                        <span key={tag} className="px-3 py-1 bg-white/5 rounded-full text-stone-400 border border-white/10">
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                         <div className="flex gap-4">
