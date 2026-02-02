@@ -27,6 +27,7 @@ export default function Home() {
           <a href="#how-to-play" className="hover:text-neon-purple transition-colors">Como Jogar</a>
           <Link href="/cartas" className="hover:text-neon-purple transition-colors">Cartas</Link>
           <a href="#lore" className="hover:text-neon-purple transition-colors">Lendas</a>
+          <Link href="/historia" className="hover:text-neon-purple transition-colors">História</Link>
         </div>
         <div className="hidden md:flex">
              <Button size="sm" variant="outline">
@@ -73,6 +74,11 @@ export default function Home() {
             <Button size="lg" glow>
               Baixar o Jogo
             </Button>
+            <Link href="/historia" legacyBehavior>
+              <Button size="lg" variant="outline" className="border-neon-purple text-neon-purple hover:bg-neon-purple/10">
+                Ler a História
+              </Button>
+            </Link>
             <Link href="/regras" legacyBehavior>
                 <Button size="lg" variant="secondary">Ler as Regras</Button>
             </Link>
