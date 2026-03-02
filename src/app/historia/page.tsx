@@ -122,8 +122,8 @@ export default function HistoriaPage() {
             </div>
 
             {/* Chapter Footer / Pagination */}
-            <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 gap-4 md:flex md:justify-between md:items-center">
-              <div className="col-span-1 order-2 md:order-1">
+            <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 gap-4 md:flex md:justify-between md:items-center md:gap-3">
+              <div className="col-span-1 order-2 md:order-1 md:flex-shrink-0">
                 <Button
                   variant="outline"
                   disabled={currentChapterIndex === 0}
@@ -135,10 +135,10 @@ export default function HistoriaPage() {
                 </Button>
               </div>
 
-              <div className="relative col-span-2 order-1 md:order-2 w-full md:w-auto">
+              <div className="relative col-span-2 order-1 md:order-2 w-full md:w-auto md:flex-1 md:max-w-[260px] md:mx-auto">
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="bg-black/40 hover:bg-white/5 hover:border-white/20 border border-white/10 rounded-lg px-4 py-2 text-sm text-stone-300 flex items-center justify-between gap-3 w-full md:min-w-[240px] transition-all duration-300 backdrop-blur-md group"
+                  className="bg-black/40 hover:bg-white/5 hover:border-white/20 border border-white/10 rounded-lg px-4 py-2 text-sm text-stone-300 flex items-center justify-between gap-3 w-full transition-all duration-300 backdrop-blur-md group"
                 >
                   <span className="truncate flex-1 text-left">
                     <span className="text-stone-500 mr-2 font-mono text-xs">#{currentChapter.id}</span>
@@ -194,7 +194,7 @@ export default function HistoriaPage() {
                 </AnimatePresence>
               </div>
 
-               <div className="col-span-1 order-2 md:order-3">
+               <div className="col-span-1 order-2 md:order-3 md:flex-shrink-0">
                  <Button
                   variant={currentChapterIndex < totalChapters - 1 ? "primary" : "outline"}
                   disabled={currentChapterIndex >= totalChapters - 1}
