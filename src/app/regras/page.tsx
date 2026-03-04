@@ -162,7 +162,7 @@ export default function RulesPage() {
                     <p>Pode falar, mas sem dar "spoilers" exatos.</p>
                     <div className="mt-2 text-sm grid grid-cols-1 md:grid-cols-2 gap-2">
                         <div className="text-green-400">✅ "Tenho como matar aquele tanque."</div>
-                        <div className="text-red-400">❌ "Tenho o Pedro na mão. Joga o arqueiro."</div>
+                        <div className="text-red-400">❌ "Tenho o Kaelen na mão. Joga o arqueiro."</div>
                     </div>
                 </div>
              </div>

@@ -20,19 +20,14 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed w-full z-50 glass-panel border-b border-white/5 top-0 left-0 px-6 py-4 flex justify-between items-center">
         <div className="font-serif text-2xl text-gold font-bold tracking-tighter">
-          ACdC
+          EdFeV
         </div>
-        <div className="hidden md:flex gap-8 text-sm font-display tracking-widest text-stone-300">
+        <div className="hidden md:flex gap-8 text-sm font-display tracking-widest text-stone-300 items-center absolute left-1/2 transform -translate-x-1/2">
           <a href="#hero" className="hover:text-neon-purple transition-colors">Início</a>
           <a href="#how-to-play" className="hover:text-neon-purple transition-colors">Como Jogar</a>
           <Link href="/cartas" className="hover:text-neon-purple transition-colors">Cartas</Link>
           <a href="#lore" className="hover:text-neon-purple transition-colors">Lendas</a>
           <Link href="/historia" className="hover:text-neon-purple transition-colors">História</Link>
-        </div>
-        <div className="hidden md:flex">
-             <Button size="sm" variant="outline">
-               Baixar PDF
-             </Button>
         </div>
       </nav>
 
@@ -52,8 +47,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="font-serif text-5xl md:text-8xl font-bold text-white mb-2 tracking-tight drop-shadow-2xl"
           >
-            As Crônicas <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-600">dos Crias</span>
+            Ecos de <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-600">Ferro e Vidro</span>
           </motion.h1>
           
           <motion.p 
@@ -62,7 +57,7 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="font-display text-2xl md:text-4xl text-stone-400 mb-8 -rotate-2 transform"
           >
-            &quot;Onde a amizade acaba e a <span className="text-neon-pink text-glow">trapaça</span> começa.&quot;
+            &quot;A traição quebrou o mundo. A <span className="text-neon-pink text-glow">vingança</span> vai queimá-lo.&quot;
           </motion.p>
 
           <motion.div 
@@ -71,9 +66,6 @@ export default function Home() {
             transition={{ delay: 0.8 }}
             className="flex flex-col md:flex-row gap-6 mt-8"
           >
-            <Button size="lg" glow>
-              Baixar o Jogo
-            </Button>
             <Link href="/historia" legacyBehavior>
               <Button size="lg" variant="outline" className="border-neon-purple text-neon-purple hover:bg-neon-purple/10">
                 Ler a História
@@ -169,14 +161,14 @@ export default function Home() {
           
           <div className="flex flex-wrap justify-center gap-8">
             <Card3D 
-              name="Pedro, O Olho" 
+              name="Kaelen, O Atirador" 
               power={5} 
               provision={13} 
               rarity="gold" 
               type="unit"
               image={PedroImg.src}
               description="Deploy: Remova todos os status do inimigo e aplique 'Marcado para Morrer'."
-              lore="Pedro não erra. Se ele te viu, você já está morto; o tempo é que ainda não percebeu."
+              lore="Kaelen não erra. Se ele te viu, você já está morto; o tempo é que ainda não percebeu."
             />
             <Card3D 
               name="GamerHard" 
@@ -220,7 +212,7 @@ export default function Home() {
                 </p>
                 <p className="text-stone-400 mb-6 leading-relaxed">
                   No vazio digital do Laboratório Vexx, cinco entidades disputam o controle da realidade. 
-                  <span className="text-white font-bold"> Pedro</span>, o olho que tudo vê; 
+                  <span className="text-white font-bold"> Kaelen</span>, o olho que tudo vê; 
                   <span className="text-white font-bold"> Izumi</span>, a lâmina silenciosa; 
                   <span className="text-white font-bold"> GamerHard</span>, o estrategista do azar; 
                   <span className="text-white font-bold"> PH</span>, o monstro da névoa; e 
@@ -234,7 +226,7 @@ export default function Home() {
              {/* Character List / Visual */}
              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                {[
-                 { name: "Pedro", img: PedroImg },
+                 { name: "Kaelen", img: PedroImg },
                  { name: "Izumi", img: IzumiImg },
                  { name: "GamerHard", img: GamerHardImg },
                  { name: "PH", img: PHImg },
@@ -256,7 +248,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-black py-12 border-t border-white/5 text-center">
-         <h2 className="font-serif text-2xl text-stone-600 mb-4">As Crônicas dos Crias</h2>
+         <h2 className="font-serif text-2xl text-stone-600 mb-4">Ecos de Ferro e Vidro</h2>
          <p className="text-stone-700 text-sm">© 2026. Feito com ódio e café.</p>
          <div className="flex justify-center gap-6 mt-6">
              <a href="#" className="text-stone-600 hover:text-neon-pink">Discord</a>

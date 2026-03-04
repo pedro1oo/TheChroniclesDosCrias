@@ -106,7 +106,7 @@ export const Card3D: React.FC<CardProps> = ({
             "{lore}"
           </p>
           <div className="mt-auto text-xs text-stone-500 uppercase tracking-widest">
-            As Crônicas dos Crias
+            Ecos de Ferro e Vidro
           </div>
         </div>
       </motion.div>

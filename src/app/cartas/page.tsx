@@ -25,15 +25,15 @@ import BarricadaImg from "../../images/barricada improvisada.png";
 
 const allCards = [
   {
-    id: "pedro",
-    name: "Pedro, O Olho",
+    id: "kaelen",
+    name: "Kaelen, O Atirador",
     power: 5,
     provision: 13,
     rarity: "gold" as const,
     type: "unit" as const,
     image: PedroImg.src,
     description: "Deploy: Remova todos os status do inimigo e aplique 'Marcado para Morrer'.",
-    lore: "Pedro não erra. Se ele te viu, você já está morto; o tempo é que ainda não percebeu."
+    lore: "Kaelen não erra. Se ele te viu, você já está morto; o tempo é que ainda não percebeu."
   },
   {
     id: "gamerhard",
@@ -100,7 +100,7 @@ const allCards = [
     type: "unit" as const,
     image: RastreadorImg.src,
     description: "Deploy: 2 dano. Combo: Se aliado jogou carta, 3 dano e Sangramento.",
-    lore: "Treinados para identificar os sinais de Pedro. Quando o Olho brilha, eles disparam."
+    lore: "Treinados para identificar os sinais de Kaelen. Quando o Olho brilha, eles disparam."
   },
   {
     id: "cadaver",
@@ -167,7 +167,7 @@ const allCards = [
     type: "spell" as const,
     image: LenteImg.src,
     description: "Remova Escudo e cause 4 dano. Golpe Mortal: Crie cópia base dela no cemitério inimigo.",
-    lore: "Pedro sobrecarrega o cristal de seu olho, disparando um feixe que atravessa escudos mágicos como papel."
+    lore: "Kaelen sobrecarrega o cristal de seu olho, disparando um feixe que atravessa escudos mágicos como papel."
   },
   {
     id: "barricada",

@@ -15,8 +15,8 @@ import IzumiImg from "../../images/Izumi.png";
 
 const legends = [
   {
-    id: "pedro",
-    name: "Pedro, O Olho da Onisciência",
+    id: "kaelen",
+    name: "Kaelen, O Olho da Onisciência",
     role: "Ouro (Lendária) - Caçador",
     power: 5,
     provision: 13,
@@ -34,7 +34,7 @@ const legends = [
       desc: "Se o seu Aliado causar qualquer dano à unidade marcada neste turno, ela é DESTRUÍDA instantaneamente."
     },
     quote: "“Parceiro, apenas arranhe a armadura dele. Eu cuido do resto.”",
-    lore: "Quando a catarata ameaçou sua mira, Pedro buscou o Doutor Vexx. Trocou seu olho natural por uma orbe voltaica. O cristal sussurra, calculando trajetórias antes da flecha voar. Pedro não erra; é uma impossibilidade física."
+    lore: "Quando a catarata ameaçou sua mira, Kaelen buscou o Doutor Vexx. Trocou seu olho natural por uma orbe voltaica. O cristal sussurra, calculando trajetórias antes da flecha voar. Kaelen não erra; é uma impossibilidade física."
   },
   {
     id: "gamerhard",

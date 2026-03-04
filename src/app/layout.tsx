@@ -20,8 +20,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "As Crônicas dos Crias",
-  description: "Onde a amizade acaba e a trapaça começa - Jogo de Cartas 2v2",
+  title: "Ecos de Ferro e Vidro",
+  description: "A traição quebrou o mundo. A vingança vai queimá-lo.",
 };
 
 export default function RootLayout({
