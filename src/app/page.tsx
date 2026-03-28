@@ -28,6 +28,7 @@ export default function Home() {
           <Link href="/cartas" className="hover:text-neon-purple transition-colors">Cartas</Link>
           <a href="#lore" className="hover:text-neon-purple transition-colors">Lendas</a>
           <Link href="/historia" className="hover:text-neon-purple transition-colors">História</Link>
+          <Link href="/sangue-e-sucessao" className="hover:text-red-400 transition-colors">Sangue e Sucessão</Link>
         </div>
       </nav>
 
@@ -69,6 +70,11 @@ export default function Home() {
             <Link href="/historia" legacyBehavior>
               <Button size="lg" variant="outline" className="border-neon-purple text-neon-purple hover:bg-neon-purple/10">
                 Ler a História
+              </Button>
+            </Link>
+            <Link href="/sangue-e-sucessao" legacyBehavior>
+              <Button size="lg" variant="outline" className="border-red-500 text-red-400 hover:bg-red-900/10">
+                Sangue e Sucessão
               </Button>
             </Link>
             <Link href="/regras" legacyBehavior>
@@ -195,6 +201,58 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link href="/cartas">
                 <Button variant="primary">Ver Todas as Cartas</Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Stories Section */}
+      <section id="stories" className="py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center mb-16">
+            <h2 className="font-serif text-4xl text-white mb-4">As Crônicas</h2>
+            <p className="text-stone-400 max-w-2xl text-center">
+              Duas histórias. Dois mundos. Escolha qual caminho percorrer.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Ecos de Ferro e Vidro */}
+            <Link href="/historia" className="group">
+              <div className="glass-panel border border-neon-purple/20 rounded-2xl p-8 h-full hover:border-neon-purple/50 transition-all duration-300 hover:bg-neon-purple/5 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-neon-purple/10 blur-[80px] pointer-events-none" />
+                <span className="inline-block px-3 py-1 rounded-full bg-neon-purple/10 border border-neon-purple/20 text-xs font-display tracking-widest text-neon-purple mb-4">
+                  18 CAPÍTULOS
+                </span>
+                <h3 className="font-serif text-2xl text-white mb-3 group-hover:text-neon-purple transition-colors">
+                  Ecos de Ferro e Vidro
+                </h3>
+                <p className="text-stone-400 text-sm leading-relaxed mb-6">
+                  A traição quebrou o mundo. A vingança vai queimá-lo. Acompanhe Kaelen, o atirador que trocou um olho por onisciência, e as cinco lendas que disputam o controle da realidade.
+                </p>
+                <span className="text-neon-purple text-sm font-display tracking-wider group-hover:translate-x-1 transition-transform inline-block">
+                  LER HISTÓRIA →
+                </span>
+              </div>
+            </Link>
+
+            {/* Sangue e Sucessão */}
+            <Link href="/sangue-e-sucessao" className="group">
+              <div className="glass-panel border border-red-900/20 rounded-2xl p-8 h-full hover:border-red-500/50 transition-all duration-300 hover:bg-red-900/5 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-red-900/10 blur-[80px] pointer-events-none" />
+                <span className="inline-block px-3 py-1 rounded-full bg-red-900/10 border border-red-900/20 text-xs font-display tracking-widest text-red-400 mb-4">
+                  NOVA HISTÓRIA
+                </span>
+                <h3 className="font-serif text-2xl text-white mb-3 group-hover:text-red-400 transition-colors">
+                  Sangue e Sucessão
+                </h3>
+                <p className="text-stone-400 text-sm leading-relaxed mb-6">
+                  Enoch Thorne era um mercenário que roubava carruagens. Até a noite em que foi servido como prato principal em um banquete de monstros — e jurou afogar cada um deles no próprio sangue.
+                </p>
+                <span className="text-red-400 text-sm font-display tracking-wider group-hover:translate-x-1 transition-transform inline-block">
+                  LER HISTÓRIA →
+                </span>
+              </div>
             </Link>
           </div>
         </div>
